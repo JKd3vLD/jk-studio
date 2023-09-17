@@ -1,0 +1,23 @@
+{
+  "name": "werewolf-mobile",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@astrojs/solid-js": "^3.0.1",
+    "astro": "^3.1.0",
+    "solid-js": "^1.7.11"
+  }
+}

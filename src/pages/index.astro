@@ -1,6 +1,7 @@
 ---
 // Component Imports
-import Counter from '../components/Counter';
+import Counter from '../components/Counter'
+import { GoogleFontsOptimizer } from 'astro-google-fonts-optimizer'
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -11,22 +12,45 @@ import Counter from '../components/Counter';
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<style>
-			html,
-			body {
-				font-family: system-ui;
-				margin: 0;
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin="anonymous"
+		/>
+		<style type="text/css">
+			@font-face {
+				font-family: 'Montserrat';
+				font-style: normal;
+				font-weight: 100 900;
+				font-display: swap;
+				ascent-override: 90%;
+				descent-override: 24%;
+				src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2)
+					format('woff2');
 			}
-			body {
-				padding: 2rem;
+			@font-face {
+				font-family: 'Montserrat';
+				font-style: italic;
+				font-weight: 100 900;
+				font-display: swap;
+				ascent-override: 88%;
+				descent-override: 24%;
+				src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUQjIg1_i6t8kCHKm459WxRyS7m.woff2)
+					format('woff2');
 			}
 		</style>
+		<GoogleFontsOptimizer
+			url="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap"
+		/>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<style></style>
 	</head>
 	<body>
 		<main>
 			<Counter client:visible>
-				<h1>Hello, Solid!</h1>
+				<h1>Hello, World!</h1>
 			</Counter>
 		</main>
 	</body>

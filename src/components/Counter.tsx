@@ -1,19 +1,31 @@
-import { createSignal } from 'solid-js';
-import './Counter.css';
+import './Counter.css'
 
-export default function Counter(props) {
-	const [count, setCount] = createSignal(0);
-	const add = () => setCount(count() + 1);
-	const subtract = () => setCount(count() - 1);
+import { createSignal } from 'solid-js'
+
+export default function Counter(props: any) {
+	const [weight, setWeight] = createSignal(400)
 
 	return (
 		<>
 			<div class="counter">
-				<button onClick={subtract}>-</button>
-				<pre>{count()}</pre>
-				<button onClick={add}>+</button>
+				<input
+					type="range"
+					min="100"
+					max="900"
+					value={weight()}
+					onInput={(e) => setWeight(parseInt(e.target.value))}
+				/>
 			</div>
-			<div class="counter-message">{props.children}</div>
+			<div
+				class="counter-message"
+				style={{
+					'font-weight': weight(),
+					'font-optical-sizing': 'none',
+					'font-style': 'normal',
+				}}
+			>
+				{props.children}
+			</div>
 		</>
-	);
+	)
 }
